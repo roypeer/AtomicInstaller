@@ -18,5 +18,19 @@
     <ClCompile Include="AtomicInstaller.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="InstalledFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ExcerciseConstants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InstalledFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InstalledDirectory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

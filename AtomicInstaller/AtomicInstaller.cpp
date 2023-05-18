@@ -1,7 +1,10 @@
 #include <Windows.h>
 #include <iostream>
 
-int main() {
+#include "ExcerciseConstants.h"
+#include "InstalledFile.h"
+
+int fun() {
 	const wchar_t* sourceFilePath = L"C:\\path\\to\\source\\file.txt";
 	const wchar_t* destinationFilePath = L"C:\\path\\to\\destination\\file.txt";
 
@@ -16,4 +19,9 @@ int main() {
 	}
 
 	return 0;
+}
+
+int main() {
+	bool good = false;
+	auto my_file = InstalledFile(L"D:\\playground\\nice", L"D:\\playground\\cool.txt", good);
 }
