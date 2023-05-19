@@ -12,15 +12,15 @@ InstalledFile::InstalledFile(std::wstring destination_directory, std::wstring so
 	
 	wchar_t installed_file_path[MAX_PATH];
 	
-	// TODO: Check return value
-	PathCchCombine(installed_file_path, MAX_PATH, destination_directory.c_str(), file_name);
+	if (S_OK != PathCchCombine(installed_file_path, MAX_PATH, destination_directory.c_str(), file_name)) {
+		throw InstallException("Construction of the new file path failed.");
+	}
 	
 	m_path = installed_file_path;
 	
-	// TODO: Consider MAX_PATH
-
-	// TODO: Check success and THROW respectively 
-	CopyFileW(source_path.c_str(), installed_file_path, FALSE);
+	if (!CopyFileW(source_path.c_str(), installed_file_path, FALSE)) {
+		throw InstallException("Failed to copy file to the new destination.");
+	}
 }
 
 InstalledFile::~InstalledFile()
@@ -30,7 +30,6 @@ InstalledFile::~InstalledFile()
 		// because it already existed), so each file cleans itself up
 		DeleteFile(m_path.c_str());
 	}
-
 }
 
 INSTALLER_NAMESPACE_END

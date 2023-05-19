@@ -16,6 +16,15 @@
     <Filter Include="Header Files\Logging">
       <UniqueIdentifier>{83b8f6a0-494f-4545-a8f9-0f5b96838d2e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Logging">
+      <UniqueIdentifier>{d35cf6a8-bcd4-4537-be3d-b2402d3fe7ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utils">
+      <UniqueIdentifier>{39b0693a-1c40-4b36-b60c-28a3bb47c0b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utils">
+      <UniqueIdentifier>{c403042c-4689-491e-9063-ecd5ff48e8a6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AtomicInstaller.cpp">
@@ -28,27 +37,33 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ConsoleLogger.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Logging</Filter>
+    </ClCompile>
+    <ClCompile Include="WinApiWrappers.cpp">
+      <Filter>Source Files\Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ExcerciseConstants.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="InstalledFile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="InstallerUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DirectoryInstallation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AInstallerLogger.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Logging</Filter>
     </ClInclude>
     <ClInclude Include="ConsoleLogger.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Logging</Filter>
+    </ClInclude>
+    <ClInclude Include="ExcerciseConstants.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="InstallerUtils.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="WinApiWrappers.h">
+      <Filter>Header Files\Utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

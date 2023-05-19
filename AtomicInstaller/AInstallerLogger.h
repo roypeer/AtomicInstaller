@@ -5,7 +5,7 @@
 
 INSTALLER_NAMESPACE_START
 
-static const auto& INSTALLATION_LOG_PREFIX = "|Installation Log| ";
+static constexpr auto& INSTALLATION_LOG_PREFIX = "|Installation Log| ";
 
 /**
  * @class AInstallerLogger
@@ -37,7 +37,7 @@ protected:
      * @access virtual protected 
      * @parameter std::string message
      */
-    virtual void output_log(std::string message) const = 0;
+    virtual void output_log(const std::string& message) const = 0;
 };
 
 INSTALLER_NAMESPACE_END

@@ -155,6 +155,7 @@
     <ClCompile Include="ConsoleLogger.cpp" />
     <ClCompile Include="DirectoryInstallation.cpp" />
     <ClCompile Include="InstalledFile.cpp" />
+    <ClCompile Include="WinApiWrappers.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsoleLogger.h" />
@@ -163,6 +164,7 @@
     <ClInclude Include="AInstallerLogger.h" />
     <ClInclude Include="InstalledFile.h" />
     <ClInclude Include="InstallerUtils.h" />
+    <ClInclude Include="WinApiWrappers.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

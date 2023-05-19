@@ -10,10 +10,12 @@ int main() {
 
 	USE_INSTALLER_NAMESPACE
 
-		
 	try {
 		auto installation = DirectoryInstallation(ConstantPaths::destination_directory);
 		
+		// For maximum efficiency 
+		installation.reserve(ConstantPaths::files_to_install.size());
+
 		for (const auto& file : ConstantPaths::files_to_install) {
 			installation.add_file(file);
 		}

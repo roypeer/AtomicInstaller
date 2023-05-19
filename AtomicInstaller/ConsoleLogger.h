@@ -6,7 +6,7 @@
 INSTALLER_NAMESPACE_START
 
 class ConsoleLogger : public AInstallerLogger {
-	virtual void output_log(std::string message) const override;
+	virtual void output_log(const std::string& message) const override;
 };
 
 INSTALLER_NAMESPACE_END

@@ -26,7 +26,7 @@ namespace RETURN_CODES {
 class InstallException : public std::exception {
 
 public:
-	InstallException(std::string info): m_info(info) {}
+	InstallException(const std::string& info): m_info(info) {}
 
 	const char* what() const throw() {
 		return m_info.c_str();
