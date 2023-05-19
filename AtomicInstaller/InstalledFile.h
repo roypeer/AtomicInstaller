@@ -22,13 +22,13 @@ public:
 		whether the installation was the successful, such that the termination of the InstalledFile knows whether to delete
 		the put file.
 	 */
-	InstalledFile(std::wstring destination_directory, std::wstring source_path, bool& const installation_validity);
+	InstalledFile(std::wstring destination_directory, std::wstring source_path, bool& const auto_cleanup);
 
 	virtual ~InstalledFile();
 
 private:
 	std::wstring m_path;
-	bool& const m_validity_handle;
+	bool& const m_cleanup_handle;
 };
 
 INSTALLER_NAMESPACE_END

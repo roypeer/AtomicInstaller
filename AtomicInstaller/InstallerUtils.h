@@ -8,3 +8,5 @@
 #define INSTALLER_NAMESPACE_START namespace installer {
 
 #define INSTALLER_NAMESPACE_END }
+
+#define USE_INSTALLER_NAMESPACE using namespace installer;

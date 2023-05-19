@@ -21,6 +21,9 @@
     <ClCompile Include="InstalledFile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="InstalledDirectory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ExcerciseConstants.h">
@@ -29,7 +32,10 @@
     <ClInclude Include="InstalledFile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="InstalledDirectory.h">
+    <ClInclude Include="InstallerUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectoryInstallation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

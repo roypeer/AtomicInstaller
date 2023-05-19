@@ -10,7 +10,6 @@
 
 INSTALLER_NAMESPACE_START
 
-// Mmmmm name?
 class DirectoryInstallation {
 public:
 
@@ -30,7 +29,9 @@ public:
 	bool add_file(std::wstring source_path);
 
 private:
+	// TODO: Document these data members, and note that m_files_auto_cleanup appears before the vector.
 	bool m_is_valid;
+	bool m_files_auto_cleanup;
 	bool m_directory_existed;
 	std::wstring m_path;
 

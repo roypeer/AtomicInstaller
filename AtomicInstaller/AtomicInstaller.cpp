@@ -3,8 +3,8 @@
 
 #include "ExcerciseConstants.h"
 #include "InstalledFile.h"
+#include "DirectoryInstallation.h"
 
-INSTALLER_NAMESPACE_START
 
 int fun() {
 	const wchar_t* sourceFilePath = L"C:\\path\\to\\source\\file.txt";
@@ -23,9 +23,20 @@ int fun() {
 	return 0;
 }
 
-int main() {
-	bool good = false;
-	auto my_file = InstalledFile(L"D:\\playground\\nice", L"D:\\playground\\cool.txt", good);
-}
 
-INSTALLER_NAMESPACE_END
+int main() {
+	// bool good = false;
+	//auto my_file = InstalledFile(L"D:\\playground\\nice", L"D:\\playground\\cool.txt", good);
+	USE_INSTALLER_NAMESPACE
+
+	try {
+		auto installation = DirectoryInstallation(ExcrConstants::destination_directory);
+		installation.add_file(ExcrConstants::file1_path);
+	}
+	catch (...) // TODO: indicative.. 
+	{
+		return 0; // TODO: change error code
+	}
+
+	return 0;
+}

@@ -152,12 +152,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AtomicInstaller.cpp" />
+    <ClCompile Include="InstalledDirectory.cpp" />
     <ClCompile Include="InstalledFile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ExcerciseConstants.h" />
-    <ClInclude Include="InstalledDirectory.h" />
+    <ClInclude Include="DirectoryInstallation.h" />
     <ClInclude Include="InstalledFile.h" />
+    <ClInclude Include="InstallerUtils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

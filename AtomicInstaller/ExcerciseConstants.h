@@ -1,6 +1,10 @@
 #pragma once
 
+#include "InstallerUtils.h"
+
 // TODO: change to std::unordered_set, iterate with const auto& in main..
+
+INSTALLER_NAMESPACE_START
 
 namespace ExcrConstants {
 	const wchar_t* file1_path = L"D:\\playground\\files\\file1.txt";
@@ -9,3 +13,5 @@ namespace ExcrConstants {
 
 	const wchar_t* destination_directory = L"D:\\playground\\some_dir";
 }
+
+INSTALLER_NAMESPACE_END

@@ -6,7 +6,7 @@
 INSTALLER_NAMESPACE_START
 
 InstalledFile::InstalledFile(std::wstring destination_directory, std::wstring source_path, 
-	bool& const installation_validity): m_validity_handle(installation_validity)
+	bool& const auto_cleanup): m_cleanup_handle(auto_cleanup)
 {
 	auto file_name = PathFindFileName(source_path.c_str());
 	
@@ -25,8 +25,9 @@ InstalledFile::InstalledFile(std::wstring destination_directory, std::wstring so
 
 InstalledFile::~InstalledFile()
 {
-	if (!m_validity_handle) {
-		// Installation went wrong
+	if (m_cleanup_handle) {
+		// Installation went wrong, and installation directory wasn't removed recursively (probably 
+		// because it already existed), so each file cleans itself up
 		DeleteFile(m_path.c_str());
 	}
 
