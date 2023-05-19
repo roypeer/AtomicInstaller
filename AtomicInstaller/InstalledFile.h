@@ -3,6 +3,10 @@
 #include <Windows.h>
 #include <string>
 
+#include "InstallerUtils.h"
+
+INSTALLER_NAMESPACE_START
+
 class InstalledFile {
 public:
 
@@ -26,3 +30,5 @@ private:
 	std::wstring m_path;
 	bool& const m_validity_handle;
 };
+
+INSTALLER_NAMESPACE_END

@@ -4,6 +4,8 @@
 #include "ExcerciseConstants.h"
 #include "InstalledFile.h"
 
+INSTALLER_NAMESPACE_START
+
 int fun() {
 	const wchar_t* sourceFilePath = L"C:\\path\\to\\source\\file.txt";
 	const wchar_t* destinationFilePath = L"C:\\path\\to\\destination\\file.txt";
@@ -25,3 +27,5 @@ int main() {
 	bool good = false;
 	auto my_file = InstalledFile(L"D:\\playground\\nice", L"D:\\playground\\cool.txt", good);
 }
+
+INSTALLER_NAMESPACE_END

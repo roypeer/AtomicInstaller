@@ -3,6 +3,8 @@
 #include <shlwapi.h>
 #include <pathcch.h>
 
+INSTALLER_NAMESPACE_START
+
 InstalledFile::InstalledFile(std::wstring destination_directory, std::wstring source_path, 
 	bool& const installation_validity): m_validity_handle(installation_validity)
 {
@@ -17,7 +19,7 @@ InstalledFile::InstalledFile(std::wstring destination_directory, std::wstring so
 	
 	// TODO: Consider MAX_PATH
 
-	// TODO: Check success
+	// TODO: Check success and THROW respectively 
 	CopyFileW(source_path.c_str(), installed_file_path, FALSE);
 }
 
@@ -29,3 +31,5 @@ InstalledFile::~InstalledFile()
 	}
 
 }
+
+INSTALLER_NAMESPACE_END
