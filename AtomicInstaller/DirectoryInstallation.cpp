@@ -6,8 +6,6 @@ DirectoryInstallation::DirectoryInstallation(std::wstring directory_path): m_is_
 																		   m_files_auto_cleanup(false),
 																		   m_path(directory_path)
 {
-	// Let's create the directory if it doesn't exist
-	// TODO: consider the security attributes
 	if (CreateDirectory(directory_path.c_str(), NULL)) {
 		m_directory_existed = false;
 	}
@@ -17,8 +15,7 @@ DirectoryInstallation::DirectoryInstallation(std::wstring directory_path): m_is_
 			m_directory_existed = true;
 		}
 		else {
-			// TODO: THROW EXCEPTION! Make it indicative 
-			throw;
+			throw InstallException("Unable to create directory.");
 		}
 	}
 }
@@ -26,12 +23,12 @@ DirectoryInstallation::DirectoryInstallation(std::wstring directory_path): m_is_
 
 DirectoryInstallation::~DirectoryInstallation()
 {
-	// Remove the directory (if needed!), but first you need to make sure the file's dtors are called
-
+	
 	if (!m_is_valid) { // This means the installation went wrong		
 		if (!m_directory_existed) {
 			m_files_auto_cleanup = false; // delete this line
 			// TODO: Call recursive_delete of directory...
+
 		}
 		else {
 			m_files_auto_cleanup = true;

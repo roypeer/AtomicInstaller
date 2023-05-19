@@ -152,12 +152,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AtomicInstaller.cpp" />
-    <ClCompile Include="InstalledDirectory.cpp" />
+    <ClCompile Include="ConsoleLogger.cpp" />
+    <ClCompile Include="DirectoryInstallation.cpp" />
     <ClCompile Include="InstalledFile.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ConsoleLogger.h" />
     <ClInclude Include="ExcerciseConstants.h" />
     <ClInclude Include="DirectoryInstallation.h" />
+    <ClInclude Include="AInstallerLogger.h" />
     <ClInclude Include="InstalledFile.h" />
     <ClInclude Include="InstallerUtils.h" />
   </ItemGroup>

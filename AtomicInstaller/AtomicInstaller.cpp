@@ -4,39 +4,31 @@
 #include "ExcerciseConstants.h"
 #include "InstalledFile.h"
 #include "DirectoryInstallation.h"
-
-
-int fun() {
-	const wchar_t* sourceFilePath = L"C:\\path\\to\\source\\file.txt";
-	const wchar_t* destinationFilePath = L"C:\\path\\to\\destination\\file.txt";
-
-
-	// CopyFileW is CopyFile for unicode.. the latter is an alias. 
-
-	if (CopyFileW(sourceFilePath, destinationFilePath, FALSE)) {
-		std::cout << "File copied successfully." << std::endl;
-	}
-	else {
-		std::cout << "Failed to copy file. Error code: " << GetLastError() << std::endl;
-	}
-
-	return 0;
-}
-
+#include "ConsoleLogger.h"
 
 int main() {
-	// bool good = false;
-	//auto my_file = InstalledFile(L"D:\\playground\\nice", L"D:\\playground\\cool.txt", good);
+
 	USE_INSTALLER_NAMESPACE
 
+		
 	try {
-		auto installation = DirectoryInstallation(ExcrConstants::destination_directory);
-		installation.add_file(ExcrConstants::file1_path);
+		auto installation = DirectoryInstallation(ConstantPaths::destination_directory);
+		
+		for (const auto& file : ConstantPaths::files_to_install) {
+			installation.add_file(file);
+		}
 	}
-	catch (...) // TODO: indicative.. 
+	catch (const InstallException& exception) {
+		ConsoleLogger().installation_log(exception.what());
+		ConsoleLogger().installation_log("Installation failed.");
+		return RETURN_CODES::INSTALLATION_ERROR;
+	}
+	catch (...)
 	{
-		return 0; // TODO: change error code
+		ConsoleLogger().installation_log("An unexpected error has occurred.");
+		return RETURN_CODES::UNKNOWN_ERROR;
 	}
 
-	return 0;
+	ConsoleLogger().installation_log("Installation performed successfully!");
+	return RETURN_CODES::SUCCESS;
 }

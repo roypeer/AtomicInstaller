@@ -10,13 +10,24 @@
 
 INSTALLER_NAMESPACE_START
 
+/**
+ * @class DirectoryInstallation
+ * @brief This class initializes and maintains an installation process given an installation path.
+ */
 class DirectoryInstallation {
 public:
 
+
+	/*
+	 * @method DirectoryInstallation
+	 * @FullMethod installer::DirectoryInstallation::DirectoryInstallation
+	 * @access public 
+	 * @throw InstallException, if unable to create a directory and not because it didn't exist.
+	 * @parameter std::wstring directory_path - the path of installation
+	 */
 	DirectoryInstallation(std::wstring directory_path);
 
 	virtual ~DirectoryInstallation();
-
 
 	/*
 	 * @method add_file
@@ -29,7 +40,7 @@ public:
 	bool add_file(std::wstring source_path);
 
 private:
-	// TODO: Document these data members, and note that m_files_auto_cleanup appears before the vector.
+	// TODO: Document these data members in the README, and note that m_files_auto_cleanup appears before the vector.
 	bool m_is_valid;
 	bool m_files_auto_cleanup;
 	bool m_directory_existed;

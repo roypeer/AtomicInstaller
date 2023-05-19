@@ -1,17 +1,18 @@
 #pragma once
 
-#include "InstallerUtils.h"
+#include <unordered_set>
 
-// TODO: change to std::unordered_set, iterate with const auto& in main..
+#include "InstallerUtils.h"
 
 INSTALLER_NAMESPACE_START
 
-namespace ExcrConstants {
-	const wchar_t* file1_path = L"D:\\playground\\files\\file1.txt";
-	const wchar_t* file2_path = L"D:\\playground\\files\\file2.txt";
-	const wchar_t* file3_path = L"D:\\playground\\files\\file3.txt";
+namespace ConstantPaths {
+	
+	const wchar_t* destination_directory = L"D:\\playground\\installation_dir";
 
-	const wchar_t* destination_directory = L"D:\\playground\\some_dir";
+	const std::unordered_set<const wchar_t*> files_to_install = { L"D:\\playground\\files\\file1.txt",
+																  L"D:\\playground\\files\\file2.txt",
+																  L"D:\\playground\\other_files\\file3.txt" };
 }
 
 INSTALLER_NAMESPACE_END

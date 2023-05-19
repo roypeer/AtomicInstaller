@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Logging">
+      <UniqueIdentifier>{83b8f6a0-494f-4545-a8f9-0f5b96838d2e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AtomicInstaller.cpp">
@@ -21,7 +24,10 @@
     <ClCompile Include="InstalledFile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="InstalledDirectory.cpp">
+    <ClCompile Include="DirectoryInstallation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleLogger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -36,6 +42,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DirectoryInstallation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AInstallerLogger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleLogger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
