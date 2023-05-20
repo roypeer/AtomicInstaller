@@ -41,6 +41,21 @@ public:
 	 */
 	virtual ~InstalledFile();
 
+
+	/**
+	 * [FOR INTERVIEWER] Rule of five tells us that definition of a custom destructor should be used
+	   in conjunction with definition of custom copy/move constructor/assignment operators. 
+	   
+	   Here we want the move constructor to be default - because we don't want the file to be re-deleted,
+	   and we just want to move the data members describing the file's presence.
+	   
+	   The copy constructor, on the other hand, should indeed be deleted. 
+	 */
+	InstalledFile(const InstalledFile& other) = delete;
+	InstalledFile& operator=(const InstalledFile& other) = delete;
+	InstalledFile(InstalledFile&& other) = default;
+	InstalledFile& operator=(InstalledFile&& other) = default;
+
 private:
 	std::wstring m_path;
 	bool& const m_cleanup_handle;

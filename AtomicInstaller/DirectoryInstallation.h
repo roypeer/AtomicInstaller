@@ -49,6 +49,20 @@ public:
 	 */
 	void reserve(const size_t& number_of_files);
 
+	/**
+	 * [FOR INTERVIEWER] Rule of five tells us that definition of a custom destructor should be used
+	   in conjunction with definition of custom copy/move constructor/assignment operators.
+
+	   Here we want the move constructor to be default - because we don't want the directory to be re-deleted,
+	   and we just want to move the data members describing the directory's presence.
+
+	   The copy constructor, on the other hand, should indeed be deleted.
+	 */
+	DirectoryInstallation(const DirectoryInstallation& other) = delete;
+	DirectoryInstallation& operator=(const DirectoryInstallation& other) = delete;
+	DirectoryInstallation(DirectoryInstallation&& other) = default;
+	DirectoryInstallation& operator=(DirectoryInstallation&& other) = default;
+
 private:	
 
 	bool m_is_valid;
