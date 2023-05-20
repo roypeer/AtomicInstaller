@@ -26,6 +26,15 @@ public:
 	 */
 	DirectoryInstallation(std::wstring directory_path);
 
+	/*
+	 * @method ~DirectoryInstallation
+	 * @brief A directory installation dtor - if the installation was invalid, termination
+	 * should cleanup the installation: If the state specifies the directory didn't exist, remove
+	 * it recursively (single operation) and set the files' auto-cleanup to off. If the directory did exist,
+	 * simply let each file clean itself.
+	 * @FullMethod installer::DirectoryInstallation::~DirectoryInstallation
+	 * @access virtual public 
+	 */
 	virtual ~DirectoryInstallation();
 
 	/*
