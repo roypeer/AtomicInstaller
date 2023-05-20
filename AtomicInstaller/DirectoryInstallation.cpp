@@ -15,7 +15,7 @@ DirectoryInstallation::DirectoryInstallation(std::wstring directory_path): m_is_
 	else {
 		auto error_code = GetLastError();
 		if (ERROR_ALREADY_EXISTS == error_code) {
-			ConsoleLogger().installation_log("Notice: directory already existed");
+			ConsoleLogger::instance().installation_log("Notice: directory already existed");
 			m_directory_existed = true;
 		}
 		else {

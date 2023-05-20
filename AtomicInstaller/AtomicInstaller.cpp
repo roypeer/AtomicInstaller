@@ -1,5 +1,4 @@
 #include <Windows.h>
-#include <iostream>
 
 #include "ExcerciseConstants.h"
 #include "InstalledFile.h"
@@ -9,6 +8,8 @@
 int main() {
 
 	USE_INSTALLER_NAMESPACE
+
+	AInstallerLogger& logger = ConsoleLogger::instance();
 
 	try {
 		auto installation = DirectoryInstallation(ConstantPaths::destination_directory);
@@ -21,16 +22,19 @@ int main() {
 		}
 	}
 	catch (const InstallException& exception) {
-		ConsoleLogger().installation_log(exception.what());
-		ConsoleLogger().installation_log("Installation failed.");
+		logger.installation_log(exception.what());
+		logger.installation_log("Installation failed.");
+		
 		return RETURN_CODES::INSTALLATION_ERROR;
 	}
 	catch (...)
 	{
-		ConsoleLogger().installation_log("An unexpected error has occurred.");
+		logger.installation_log("An unexpected error has occurred.");
+		
 		return RETURN_CODES::UNKNOWN_ERROR;
 	}
 
-	ConsoleLogger().installation_log("Installation performed successfully!");
+	logger.installation_log("Installation performed successfully!");
+	
 	return RETURN_CODES::SUCCESS;
 }
