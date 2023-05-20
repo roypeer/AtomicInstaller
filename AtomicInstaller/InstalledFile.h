@@ -9,7 +9,7 @@ INSTALLER_NAMESPACE_START
 
 /**
  * @class InstalledFile
- * @brief This class initializes (via copy) and maintains the presence of an installed file
+ * @brief This class initializes (via copying from source) and maintains the presence of an installed file
  */
 class InstalledFile {
 public:
